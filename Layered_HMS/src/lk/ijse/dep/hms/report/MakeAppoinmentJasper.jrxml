@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MakeAppoinmentJasper" pageWidth="595" pageHeight="400" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5fd48f2c-f063-4a60-8070-49511677f3bd">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="appid" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT hmsdb.appoinment.appoinmentid,
+	hmsdb.appoinment.appoinmentdate,
+	hmsdb.appoinment.patientid,
+	hmsdb.appoinment.doctorid,
+	hmsdb.patient.patientfname,
+	hmsdb.doctor.firstname,
+	hmsdb.doctor.specialization,
+	hmsdb.patient.gender,
+	hmsdb.doctor.fee
+FROM hmsdb.appoinment
+	INNER JOIN hmsdb.doctor ON 
+	 hmsdb.appoinment.doctorid = hmsdb.doctor.doctorid 
+	INNER JOIN hmsdb.patient ON 
+	 hmsdb.appoinment.patientid = hmsdb.patient.patientid
+	 WHERE hmsdb.appoinment.appoinmentid = $P{appid}
+	]]>
+	</queryString>
+	<field name="appoinmentid" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="appoinmentid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="appoinment"/>
+	</field>
+	<field name="appoinmentdate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="appoinmentdate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="appoinment"/>
+	</field>
+	<field name="patientid" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="patientid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="appoinment"/>
+	</field>
+	<field name="doctorid" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="doctorid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="appoinment"/>
+	</field>
+	<field name="patientfname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="patientfname"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient"/>
+	</field>
+	<field name="firstname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="firstname"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="doctor"/>
+	</field>
+	<field name="specialization" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="specialization"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="doctor"/>
+	</field>
+	<field name="gender" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="gender"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient"/>
+	</field>
+	<field name="fee" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="fee"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="doctor"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="556" height="80" forecolor="#FCF7F7" backcolor="rgba(69, 90, 100, 0.79607844)" uuid="0aa449b3-743b-4ba4-bf63-51aaa94f336f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Appoinment Receipt]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="211" splitType="Stretch">
+			<textField>
+				<reportElement x="140" y="10" width="140" height="30" uuid="be7d6a77-8d3c-469d-a6cc-76ef3161de52"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{appoinmentid}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="10" width="130" height="30" uuid="acf60a9e-4a74-455b-b910-3c5bfedd3b4b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Appoinment  ID :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="50" width="130" height="30" uuid="5fd02b2d-ff6a-4d4f-9dbd-f74b3990e4d9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Doctor  ID :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="90" width="130" height="30" uuid="497a7663-b0cb-4077-b7bd-d74ce128f629"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Doctor Name :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="170" width="130" height="30" uuid="8686b2a2-874e-4b0e-a83d-2ea0fa3a3175"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fee :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="130" width="130" height="30" uuid="5d8494bc-22f1-44ad-bf16-7a84a6ef0123"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Specialization :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="10" width="100" height="30" uuid="4c8420b5-3136-4db7-b211-63325c0618c9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="90" width="100" height="30" uuid="5f54108d-24d4-49da-96e8-d2ac7cc35355"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Patient Name :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="50" width="100" height="30" uuid="ed1f14e9-0efd-45ff-9604-49f59e51826b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Patient ID :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="130" width="100" height="30" uuid="97df6d9d-c7b4-4b63-aee4-e3912abe7885"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gender :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="140" y="50" width="140" height="30" uuid="c4aff133-1508-4f6a-a8c4-11feb43dfbc9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{doctorid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="90" width="140" height="30" uuid="53827e71-e884-4ca2-90c6-017abe2b903b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{firstname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="130" width="140" height="30" uuid="cc39fc2f-6742-4b49-92f1-0f8cdeefa092"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{specialization}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="170" width="140" height="30" uuid="b4f658c4-4a72-4df3-9562-5a76d980ea9e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fee}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="10" width="146" height="30" uuid="bba0ce7a-6cc5-430d-81d3-48d6d8f8a10b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{appoinmentdate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="50" width="146" height="30" uuid="3cd2ec72-f088-4c1d-8edf-f2b15b8240b1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{patientid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="90" width="146" height="30" uuid="5ce07a12-f21d-48ed-9eb9-cb8d1a3312fb"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{patientfname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="130" width="146" height="30" uuid="af396fa6-f6ee-4021-ad45-3d49149e4985"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{gender}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+</jasperReport>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="IssuePrescriptionSub" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6d502d31-ca02-406c-86b2-aadd2dfd3cde">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="subpresid" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT hmsdb.prescriptiondetail.medicineid,
+	hmsdb.medicine.drugname,
+	hmsdb.medicine.brandname,
+	hmsdb.medicine.drugtype,
+	hmsdb.prescription.prescriptionid
+FROM hmsdb.prescriptiondetail
+	INNER JOIN hmsdb.prescription ON 
+	 hmsdb.prescriptiondetail.prescriptionid = hmsdb.prescription.prescriptionid 
+	INNER JOIN hmsdb.medicine ON 
+	 hmsdb.prescriptiondetail.medicineid = hmsdb.medicine.medicineid
+	 WHERE hmsdb.prescription.prescriptionid = $P{subpresid}]]>
+	</queryString>
+	<field name="medicineid" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="medicineid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="prescriptiondetail"/>
+	</field>
+	<field name="drugname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="drugname"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="medicine"/>
+	</field>
+	<field name="brandname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="brandname"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="medicine"/>
+	</field>
+	<field name="drugtype" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="drugtype"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="medicine"/>
+	</field>
+	<field name="prescriptionid" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="prescriptionid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="prescription"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="130" height="61" uuid="d827bb99-a9aa-4bdf-93b6-ccad2532b554">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="22dd9b87-e432-4766-8c3e-a4ba93be2292"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Medicineid]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="0" width="140" height="61" uuid="367ba8af-62e9-46d7-9f67-5c26cf850983">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="60e2e930-623e-4918-a32e-dd08d19f8426"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Drugname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="0" width="150" height="61" uuid="46a07cf4-f92c-416e-81bd-e23528446755">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a15998ee-0e4a-4e2e-bc34-ed5299b8a1ab"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Brandname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="0" width="130" height="61" uuid="1fccb943-9457-43f9-b2f9-3ba3290b1714">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b9fad432-e380-4f3f-9d0f-af3e0951a2d7"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Drugtype]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="130" height="30" uuid="a1385809-ed61-4a12-9c6c-16680de0a0f7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="22dd9b87-e432-4766-8c3e-a4ba93be2292"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{medicineid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="0" width="140" height="30" uuid="727961f3-82e0-4090-bada-35689213349f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="60e2e930-623e-4918-a32e-dd08d19f8426"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{drugname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="0" width="150" height="30" uuid="aad767e9-d763-4d13-a85e-11fa1ec85f20">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a15998ee-0e4a-4e2e-bc34-ed5299b8a1ab"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{brandname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="0" width="130" height="30" uuid="fee12892-c9c1-429c-8be4-67dd530e6685">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b9fad432-e380-4f3f-9d0f-af3e0951a2d7"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{drugtype}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AnchrPaneDoctorProfile" prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep.hms.controller.DoctorProfileFormController">
+   <children>
+      <AnchorPane layoutY="97.0" prefHeight="510.0" prefWidth="831.0" style="-fx-background-color: #0097A7;">
+         <children>
+            <Label layoutX="112.0" layoutY="153.0" prefHeight="34.0" prefWidth="145.0" text="Doctor ID" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="113.0" fitWidth="170.0" layoutX="397.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/man.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="txtFieldDoctorID" layoutX="285.0" layoutY="149.0" prefHeight="34.0" prefWidth="322.0" />
+            <Label layoutX="112.0" layoutY="193.0" prefHeight="34.0" prefWidth="145.0" text="First Name" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFieldDoctorFName" layoutX="285.0" layoutY="193.0" prefHeight="34.0" prefWidth="322.0" />
+            <Label layoutX="112.0" layoutY="237.0" prefHeight="34.0" prefWidth="145.0" text="Last Name" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFieldDoctorLName" layoutX="285.0" layoutY="237.0" prefHeight="34.0" prefWidth="322.0" />
+            <Label layoutX="112.0" layoutY="281.0" prefHeight="34.0" prefWidth="145.0" text="Specialization" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFieldDoctorSpecialization" layoutX="285.0" layoutY="281.0" prefHeight="34.0" prefWidth="322.0" />
+            <Label layoutX="112.0" layoutY="322.0" prefHeight="34.0" prefWidth="145.0" text="Email" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFieldDoctorEmail" layoutX="285.0" layoutY="322.0" prefHeight="34.0" prefWidth="322.0" />
+            <Label layoutX="112.0" layoutY="365.0" prefHeight="34.0" prefWidth="145.0" text="Fee ( LKR )" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFieldDoctorFee" layoutX="285.0" layoutY="365.0" prefHeight="34.0" prefWidth="322.0" />
+            <JFXButton fx:id="btnUpdate" layoutX="360.0" layoutY="455.0" onAction="#btnUpdate_OnAction" prefHeight="34.0" prefWidth="172.0" style="-fx-background-color: #8E24AA;" text="Update" textFill="#fcfafa">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="58.0" fitWidth="65.0" layoutX="754.0" layoutY="8.0" onMouseClicked="#btnBacktoDashboard_OnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/back.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="112.0" layoutY="408.0" prefHeight="34.0" prefWidth="145.0" text="Password" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFieldDoctorPassword" layoutX="285.0" layoutY="408.0" prefHeight="34.0" prefWidth="322.0" />
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-3.0" prefHeight="97.0" prefWidth="834.0" style="-fx-background-color: #09213E;" text="Hospital Management System | Doctor Profile" textFill="#f2ecec">
+         <font>
+            <Font name="Segoe UI" size="26.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="-11.0" layoutY="607.0" prefHeight="47.0" prefWidth="842.0" style="-fx-background-color: #09213E;" text="© 2019 Graunsa Solutions( Pvt ) Ltd. All Rights Reserved." textFill="#f2ecec">
+         <font>
+            <Font name="Segoe UI" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

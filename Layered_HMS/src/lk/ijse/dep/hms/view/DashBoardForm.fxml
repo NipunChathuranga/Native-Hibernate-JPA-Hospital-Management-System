@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AnchrPaneDashBoard" prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep.hms.controller.DashBoardFormController">
+   <children>
+      <ImageView fitHeight="650.0" fitWidth="791.0" layoutX="6.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="650.0" fitWidth="809.0" layoutX="-1.0" layoutY="7.0" opacity="0.88">
+         <image>
+            <Image url="@../asset/mockup-hospital-info-sys.jpg" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="-0.05" contrast="0.05" hue="0.1" saturation="-0.24" />
+         </effect>
+      </ImageView>
+      <Label alignment="CENTER" prefHeight="70.0" prefWidth="809.0" style="-fx-background-color: #09213E;" text="Hospital Management System" textFill="#f2ecec">
+         <font>
+            <Font name="Segoe UI" size="29.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="166.0" fitWidth="145.0" layoutX="476.0" layoutY="197.0" onMouseClicked="#btnDoctorLogin_OnAction" onMouseEntered="#btnDoctor_playMouseEnterAnimation" onMouseExited="#btnDoctor_playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/surgeon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="145.0" fitWidth="154.0" layoutX="155.0" layoutY="349.0" onMouseClicked="#btnAdminLogin_OnAction" onMouseEntered="#btnAdmin_playMouseEnterAnimation" onMouseExited="#btnAdmin_playMouseExitAnimation">
+         <image>
+            <Image url="@../asset/employee.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="438.0" layoutY="342.0" prefHeight="42.0" prefWidth="223.0" style="-fx-background-color: #0A5373;" text="Doctor Login" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI" size="25.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="116.0" layoutY="493.0" prefHeight="42.0" prefWidth="223.0" style="-fx-background-color: #0A5373;" text="Admin Login" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI" size="25.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="-40.0" layoutY="615.0" prefHeight="42.0" prefWidth="849.0" style="-fx-background-color: #09213E;" text="© 2019 Graunsa Solutions( Pvt ) Ltd. All Rights Reserved." textFill="#f2ecec">
+         <font>
+            <Font name="Segoe UI" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

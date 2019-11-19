@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AnchrPaneAdmin" prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep.hms.controller.AdminLoginFormController">
+   <children>
+      <ImageView fitHeight="623.0" fitWidth="861.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/ecg.jpg" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-6.0" prefHeight="81.0" prefWidth="837.0" style="-fx-background-color: #09213E;" text="Hospital Management System | Admin Login" textFill="#f2ecec">
+         <font>
+            <Font name="Segoe UI" size="26.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="-20.0" layoutY="630.0" prefHeight="47.0" prefWidth="851.0" style="-fx-background-color: #09213E;" text="© 2019 Graunsa Solutions( Pvt ) Ltd. All Rights Reserved." textFill="#f2ecec">
+         <font>
+            <Font name="Segoe UI" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtFieldID" layoutX="583.0" layoutY="287.0" prefHeight="25.0" prefWidth="225.0" promptText="Username" />
+      <JFXButton fx:id="btnAdminLogin" layoutX="625.0" layoutY="372.0" onAction="#btnAdminLogin_OnAction" prefHeight="25.0" prefWidth="141.0" style="-fx-background-color: #004D40;" text="Login" textFill="#fffdfd">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="58.0" fitWidth="65.0" layoutX="759.0" layoutY="92.0" onMouseClicked="#btnBacktoDashboard_OnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/back.png" />
+         </image>
+      </ImageView>
+      <PasswordField fx:id="pswrdFieldPassword" layoutX="583.0" layoutY="324.0" prefHeight="25.0" prefWidth="225.0" promptText="Password" />
+   </children>
+</AnchorPane>

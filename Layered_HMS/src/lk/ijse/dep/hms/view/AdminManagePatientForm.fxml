@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AnchrPaneManagePatient" prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep.hms.controller.AdminManagePatientFormController">
+   <children>
+      <AnchorPane layoutX="-10.0" layoutY="95.0" prefHeight="510.0" prefWidth="831.0" style="-fx-background-color: #0097A7;">
+         <children>
+            <Label layoutX="45.0" layoutY="24.0" prefHeight="34.0" prefWidth="89.0" text="Patient ID" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFieldPatientID" layoutX="144.0" layoutY="24.0" prefHeight="34.0" prefWidth="203.0" />
+            <Label layoutX="45.0" layoutY="67.0" prefHeight="34.0" prefWidth="89.0" text="Last Name" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFieldLastName" layoutX="144.0" layoutY="67.0" prefHeight="34.0" prefWidth="203.0" />
+            <Label layoutX="367.0" layoutY="24.0" prefHeight="34.0" prefWidth="89.0" text="First Name" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFieldFirstName" layoutX="469.0" layoutY="24.0" prefHeight="34.0" prefWidth="203.0" />
+            <Label layoutX="367.0" layoutY="67.0" prefHeight="34.0" prefWidth="89.0" text="City" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFieldCity" layoutX="469.0" layoutY="67.0" prefHeight="34.0" prefWidth="203.0" />
+            <Label layoutX="45.0" layoutY="117.0" prefHeight="34.0" prefWidth="77.0" text="Email" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFieldEmail" layoutX="144.0" layoutY="117.0" prefHeight="34.0" prefWidth="203.0" />
+            <JFXButton fx:id="btnSave" layoutX="693.0" layoutY="117.0" onAction="#btnSave_OnAction" prefHeight="34.0" prefWidth="98.0" style="-fx-background-color: #004D40;" text="Save" textFill="#fcfafa">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="695.0" layoutY="24.0" prefHeight="34.0" prefWidth="89.0" text="Gender" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="cmbBoxGender" layoutX="695.0" layoutY="66.0" prefHeight="34.0" prefWidth="98.0" style="-fx-background-color: #FAFAFA;" />
+            <TableView fx:id="tblViewPatientDetails" layoutX="41.0" layoutY="222.0" prefHeight="256.0" prefWidth="750.0">
+              <columns>
+                <TableColumn fx:id="tblViewPatientID" prefWidth="98.0" text="Patient ID" />
+                <TableColumn fx:id="tblViewFirstName" prefWidth="112.0" text="First Name" />
+                  <TableColumn fx:id="tblViewLastName" prefWidth="145.0" text="Last Name" />
+                  <TableColumn fx:id="tblViewGender" prefWidth="64.0" text="Gender" />
+                  <TableColumn fx:id="tblViewCity" prefWidth="137.0" text="City" />
+                  <TableColumn fx:id="tblViewEmail" prefWidth="193.0" text="Email" />
+              </columns>
+            </TableView>
+            <JFXButton fx:id="btnNewPatient" layoutX="469.0" layoutY="117.0" onAction="#btnNewPatient_OnAction" prefHeight="34.0" prefWidth="203.0" style="-fx-background-color: #880E4F;" text="New Patient" textFill="#fcfafa">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnDelete" layoutX="692.0" layoutY="158.0" onAction="#btnDelete_OnAction" prefHeight="34.0" prefWidth="98.0" style="-fx-background-color: #b71c1c;" text="Delete" textFill="#fcfafa">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-13.0" layoutY="-2.0" prefHeight="97.0" prefWidth="834.0" style="-fx-background-color: #09213E;" text="Hospital Management System | Manage Patient" textFill="#f2ecec">
+         <font>
+            <Font name="Segoe UI" size="26.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="-21.0" layoutY="605.0" prefHeight="47.0" prefWidth="842.0" style="-fx-background-color: #09213E;" text="© 2019 Graunsa Solutions( Pvt ) Ltd. All Rights Reserved." textFill="#f2ecec">
+         <font>
+            <Font name="Segoe UI" size="13.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="58.0" fitWidth="65.0" layoutX="747.0" layoutY="66.0" onMouseClicked="#btnBacktoDashboard_OnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/back.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

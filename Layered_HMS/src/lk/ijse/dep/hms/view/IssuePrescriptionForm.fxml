@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AnchrPaneIssuePres" prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep.hms.controller.IssuePrescriptionFormController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="-3.0" prefHeight="98.0" prefWidth="855.0" style="-fx-background-color: #09213E;" text="Hospital Management System | Issue Prescription" textFill="#f2ecec">
+         <font>
+            <Font name="Segoe UI" size="26.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutY="82.0" prefHeight="523.0" prefWidth="855.0" style="-fx-background-color: #0097A7;">
+         <children>
+            <TableView fx:id="tblViewMedicineDetails" layoutX="47.0" layoutY="257.0" opacity="0.99" prefHeight="197.0" prefWidth="742.0" style="-fx-background-color: #E0E0E0;">
+               <columns>
+                  <TableColumn prefWidth="133.0" text="Medicine ID" />
+                  <TableColumn minWidth="0.0" prefWidth="191.0" text="Medicine Name" />
+                  <TableColumn minWidth="0.0" prefWidth="235.0" text="Brand Name" />
+                  <TableColumn minWidth="0.0" prefWidth="182.0" text="Drug Type" />
+               </columns>
+            </TableView>
+            <Label layoutX="48.0" layoutY="19.0" prefHeight="34.0" prefWidth="145.0" text="Prescription ID" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFieldPrescriptionID" layoutX="221.0" layoutY="21.0" prefHeight="25.0" prefWidth="180.0">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <Label layoutX="457.0" layoutY="19.0" prefHeight="34.0" prefWidth="130.0" text="Date" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFieldDate" layoutX="609.0" layoutY="23.0" prefHeight="25.0" prefWidth="180.0">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <Label layoutX="48.0" layoutY="53.0" prefHeight="34.0" prefWidth="145.0" text="Appoinment ID" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="457.0" layoutY="53.0" prefHeight="34.0" prefWidth="145.0" text="Patient ID" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="48.0" layoutY="120.0" prefHeight="34.0" prefWidth="145.0" text="Medicine ID" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="cmbAppoinmentID" layoutX="221.0" layoutY="57.0" prefHeight="25.0" prefWidth="180.0" style="-fx-background-color: #FAFAFA;" />
+            <Label layoutX="457.0" layoutY="120.0" prefHeight="34.0" prefWidth="145.0" text="Medicine Name" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFieldMedName" layoutX="609.0" layoutY="121.0" prefHeight="25.0" prefWidth="180.0">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <Label layoutX="48.0" layoutY="152.0" prefHeight="34.0" prefWidth="145.0" text="Brand Name" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFieldBrandName" layoutX="221.0" layoutY="157.0" prefHeight="25.0" prefWidth="180.0">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <Label layoutX="457.0" layoutY="152.0" prefHeight="34.0" prefWidth="145.0" text="Drug Type" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFieldDrugType" layoutX="609.0" layoutY="156.0" prefHeight="25.0" prefWidth="180.0">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <JFXButton fx:id="btnAdd" layoutX="609.0" layoutY="209.0" onAction="#btnAdd_OnAction" prefHeight="18.0" prefWidth="180.0" style="-fx-background-color: #004D40;" text="Add" textFill="#f2eeee">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnNewPrescription" layoutX="48.0" layoutY="211.0" onAction="#btnNewPrescription_OnAction" prefHeight="35.0" prefWidth="156.0" style="-fx-background-color: #880E4F;" text="New Prescription" textFill="#f8f3f3">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnIssuePrescription" layoutX="609.0" layoutY="466.0" onAction="#btnIssuePrescription_OnAction" prefHeight="43.0" prefWidth="180.0" style="-fx-background-color: #004D40;" text="Issue Prescription" textFill="#f2eeee">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <TextField fx:id="txtFieldPatientID" layoutX="609.0" layoutY="57.0" prefHeight="25.0" prefWidth="180.0">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <JFXComboBox fx:id="cmbMedicineID" layoutX="221.0" layoutY="124.0" prefHeight="25.0" prefWidth="180.0" style="-fx-background-color: #FAFAFA;" />
+            <TextField fx:id="txtFieldDocID" layoutX="418.0" layoutY="93.0" prefHeight="25.0" prefWidth="180.0" />
+            <Label alignment="CENTER" layoutX="256.0" layoutY="88.0" prefHeight="34.0" prefWidth="145.0" text="Doctor ID" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnDelete" layoutX="431.0" layoutY="209.0" onAction="#btnDelete_OnAction" prefHeight="35.0" prefWidth="165.0" style="-fx-background-color: #c62828;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font></JFXButton>
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" layoutY="600.0" prefHeight="50.0" prefWidth="855.0" style="-fx-background-color: #09213E;" text="© 2019 Graunsa Solutions( Pvt ) Ltd. All Rights Reserved." textFill="#f2ecec">
+         <font>
+            <Font name="Segoe UI" size="13.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="58.0" fitWidth="65.0" layoutX="771.0" layoutY="17.0" onMouseClicked="#btnBacktoDashboard_OnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/back.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="IssuePrescriptionMain" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="371181a5-8f0d-4743-b286-d46897032f7f">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="presid" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT hmsdb.prescription.prescriptionid,
+	hmsdb.prescription.prescriptiondate,
+	hmsdb.patient.patientid,
+	hmsdb.prescription.appoinmentid
+FROM hmsdb.prescription
+	INNER JOIN hmsdb.appoinment ON 
+	 hmsdb.prescription.appoinmentid = hmsdb.appoinment.appoinmentid 
+	INNER JOIN hmsdb.patient ON 
+	 hmsdb.appoinment.patientid = hmsdb.patient.patientid
+	 WHERE  hmsdb.prescription.prescriptionid = $P{presid}]]>
+	</queryString>
+	<field name="prescriptionid" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="prescriptionid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="prescription"/>
+	</field>
+	<field name="prescriptiondate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="prescriptiondate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="prescription"/>
+	</field>
+	<field name="patientid" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="patientid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="patient"/>
+	</field>
+	<field name="appoinmentid" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="appoinmentid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="prescription"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="556" height="80" forecolor="#FCF7F7" backcolor="rgba(69, 90, 100, 0.79607844)" uuid="a6268836-eeb8-40dd-850f-afbc908d4b8d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[ Prescription Receipt]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="113" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="130" height="30" uuid="53b0327b-6b2e-4891-828f-2267b38d9aa4"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prescription ID :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="60" width="130" height="30" uuid="b8809a3b-6557-4e1d-9048-40fd47959141"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Appoinment  ID :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="60" width="90" height="30" uuid="e22852a1-46d2-4393-8e25-f5cf5a1d2037"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Patient ID :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="10" width="90" height="30" uuid="56d3086d-aa90-4927-bf44-57e563de8a6e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="140" y="10" width="130" height="30" uuid="b900d681-e19f-47f2-bd98-f1689e50ef88"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prescriptionid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="10" width="176" height="30" uuid="179abb5f-a767-46ea-b853-210c18e556e8"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prescriptiondate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="60" width="130" height="30" uuid="d7a9fe29-f186-4da1-a971-19e302922d86"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{appoinmentid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="60" width="176" height="30" uuid="7e7db808-ad21-45b5-b197-3e1ab7d0f69a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{patientid}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="207" splitType="Stretch">
+			<subreport>
+				<reportElement x="-20" y="7" width="595" height="191" uuid="dff2288c-b418-4b2b-a1d1-3602f25a76f2"/>
+				<subreportParameter name="subpresid">
+					<subreportParameterExpression><![CDATA[$P{presid}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["lk/ijse/dep/hms/report/IssuePrescriptionSub.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

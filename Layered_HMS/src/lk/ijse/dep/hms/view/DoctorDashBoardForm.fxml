@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep.hms.controller.DoctorDashBoardFormController">
+   <children>
+      <AnchorPane fx:id="AnchrPaneDoctorMain" layoutX="-1.0" layoutY="94.0" prefHeight="510.0" prefWidth="827.0" style="-fx-background-color: #0097A7;">
+         <children>
+            <ImageView fitHeight="128.0" fitWidth="128.0" layoutX="95.0" layoutY="176.0" onMouseClicked="#btnViewProfile_OnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/doctor.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="128.0" fitWidth="135.0" layoutX="359.0" layoutY="14.0" onMouseClicked="#btnViewAppoinments_OnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/appointment.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="599.0" layoutY="155.0" onMouseClicked="#btnViewPrescription_OnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/prescription.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="302.0" layoutY="142.0" prefHeight="42.0" prefWidth="223.0" style="-fx-background-color: #0A5373;" text="Appoinments" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI" size="25.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="48.0" layoutY="309.0" prefHeight="42.0" prefWidth="223.0" style="-fx-background-color: #0A5373;" text="Profile" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI" size="25.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="557.0" layoutY="309.0" prefHeight="42.0" prefWidth="234.0" style="-fx-background-color: #0A5373;" text="Prescription History" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI" size="25.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="128.0" fitWidth="138.0" layoutX="360.0" layoutY="319.0" onMouseClicked="#btnIssuePrescription_OnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/prescriptions.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="312.0" layoutY="454.0" prefHeight="42.0" prefWidth="223.0" style="-fx-background-color: #0A5373;" text="Issue Prescription" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI" size="25.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="703.0" layoutY="14.0" onAction="#btnLogout_OnAction" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #b71c1c;" text="Logout" textFill="#f8f8f8">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-7.0" prefHeight="97.0" prefWidth="834.0" style="-fx-background-color: #09213E;" text="Hospital Management System | Doctor Dashboard" textFill="#f2ecec">
+         <font>
+            <Font name="Segoe UI" size="26.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="-34.0" layoutY="604.0" prefHeight="46.0" prefWidth="860.0" style="-fx-background-color: #09213E;" text="© 2019 Graunsa Solutions( Pvt ) Ltd. All Rights Reserved." textFill="#f2ecec">
+         <font>
+            <Font name="Segoe UI" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
